@@ -2,9 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
 # C extensions
 *.so
+
+# My Files
+meow.txt
+.vscode/
 
 # Distribution / packaging
 .Python
