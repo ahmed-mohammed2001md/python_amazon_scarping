@@ -19,17 +19,9 @@ if __name__ == "__main__":
     if urls:
         # if there are urls get the data
         for url in urls:
+
             product_data = Fetch.fetch(url)
-
-            # get data from txt file
-            file = open('meow.txt', 'w', encoding='utf-8')
-            file.write(str(product_data))
-            # product_data = BeautifulSoup(file.read() , 'html.parser')
-
-
             Process.product(product_data, url)
-
-
 
     else:
         print('There is no value')
