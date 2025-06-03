@@ -26,10 +26,9 @@ MAX_CAPTCHA_DELAY = 15
 # ====================
 
 TITLE = '#title'
-
 CURRENT_PRICE = '.a-price-whole'
 LIST_PRICE = '.a-price.a-text-price > :first-child'
-DISSCOUNT = '.a-size-large a-color-price savingPriceOverride aok-align-center reinventPriceSavingsPercentageMargin savingsPercentage'
+DISSCOUNT = 'span.a-size-large.a-color-price.savingPriceOverride.aok-align-center.reinventPriceSavingsPercentageMargin.savingsPercentage'
 RATING = '.a-declarative > .a-size-base.a-color-base'
 ASIN = lambda url: url[url.index('dp/') + 3 : url.index('dp/') + 13]
 REVIEWS_COUNT = '#cm_cr_dp_d_rating_histogram .averageStarRatingNumerical span'

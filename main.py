@@ -3,6 +3,8 @@ from scraper.fetch_data import Fetch
 from scraper.process_data import Process
 from bs4 import BeautifulSoup
 
+
+
 if __name__ == "__main__":
 
     # first thing we want to get the urls from the user
@@ -21,6 +23,7 @@ if __name__ == "__main__":
         for url in urls:
 
             product_data = Fetch.fetch(url)
+            
             Process.product(product_data, url)
 
     else:

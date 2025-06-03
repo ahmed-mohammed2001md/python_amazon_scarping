@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup, Tag
 import scraper.configer as configer
+from scraper.save_data import Save
 
 class Process:
 
@@ -23,7 +24,6 @@ class Process:
         colors = Process.handle_colors(product_data.select_one(configer.COLORS))
         styles = Process.handle_styles(product_data.select_one(configer.STYLES))
         sizes = Process.handle_sizes(product_data.select_one(configer.SIZES))
-        # editions = []
 
         full_data = {
             'Title': title,
@@ -42,7 +42,10 @@ class Process:
 
         }
 
-        print(full_data)
+        # send data to Save class to save them
+        Save.csv(full_data)
+
+        
 
     def handle_colors(colors):
 
@@ -113,11 +116,6 @@ class Process:
             finally:
                 return data
         
-
-
-    # def handle_editions(editions):
-        # # this mehtod for editions only we don't need it for now
-        # pass
 
 
 

@@ -45,8 +45,11 @@ class Fetch:
         
         time.sleep(random.uniform(configer.MIN_SLEEP_DELAY, configer.MAX_SLEEP_DELAY))
 
-        # return soup
+        # the soup
         soup = BeautifulSoup(page_source, 'html.parser')
+
+        driver.quit()
+
         return soup
 
 
