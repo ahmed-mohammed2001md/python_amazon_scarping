@@ -13,6 +13,9 @@ class Save:
                 data (dict) : the data to save
         '''
 
+        if not os.path.isdir(f'{os.getcwd()}/{configer.SAVE_DATA_DIR}') :
+            os.mkdir(f'{os.getcwd()}/outputs')
+
         # check if the output.csv exsits or not for headers
         header = not os.path.isfile(f'{os.getcwd()}/{configer.SAVE_DATA_DIR}/output.csv')
 

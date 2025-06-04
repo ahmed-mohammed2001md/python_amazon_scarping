@@ -22,8 +22,10 @@ if __name__ == "__main__":
         # if there are urls get the data
         for url in urls:
 
+            # get data as soup
             product_data = Fetch.fetch(url)
-            
+
+            # extract and process data for saving
             Process.product(product_data, url)
 
     else:

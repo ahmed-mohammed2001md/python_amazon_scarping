@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time, random
 import scraper.configer as configer
-
+from fake_useragent import UserAgent 
 
 class Fetch:
 
@@ -22,7 +22,7 @@ class Fetch:
         chrome_options = Options()
 
         # Add headers and other settings to mimic a real browser
-        chrome_options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36")
+        chrome_options.add_argument(f"--user-agent={UserAgent(os='Windows').random}")
         chrome_options.add_argument("--accept-language=en-US,en;q=0.9")
         chrome_options.add_argument("--referer=https://www.google.com/")
         chrome_options.add_argument("--disable-blink-features=AutomationControlled")

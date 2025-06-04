@@ -6,6 +6,14 @@ class Process:
 
 
     def product(product_data, url):
+        '''
+            This mehtod extact data from soup and save them as varibles
+            Last this send data to Save class as CSV file
+
+            Args:
+                product_data : soup of page
+                url : the url of the page for extract asin
+        '''
                 
         # single value
         url = url
@@ -16,7 +24,7 @@ class Process:
         rating = product_data.select_one(configer.RATING).text.strip() if product_data.select_one(configer.RATING) else None
         availability = product_data.select_one(configer.AVAILABILITY).text.strip() if product_data.select_one(configer.AVAILABILITY) else None
         reviews_count = product_data.select_one(configer.REVIEWS_COUNT).text.strip() if product_data.select_one(configer.REVIEWS_COUNT) else None
-        seller = product_data.select_one(configer.SELLER).text.strip()
+        seller = product_data.select_one(configer.SELLER).text.strip().replace('Visit the', '') if product_data.select_one(configer.SELLER) else None
         asin = configer.ASIN(url)
 
 
